@@ -24,7 +24,7 @@ router.post("/signup", async (req, res) => {
                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
             }
             let token = jwtUtil.createToken(jwtClaims);
-            res.status(201).send({ userId: result._id, name: result.name, token });
+            res.status(201).send({ id: result._id, name: result.name, token });
         }
     } catch (error) {
         res.status(400).send(error);
