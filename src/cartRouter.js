@@ -42,8 +42,8 @@ router.post('/cart-product', jwtUtil.verifyToken, async (req, res) => {
                 userId: req.body.userId,
                 products: [
                     {
-                        id: req.body.id,
-                        quantity: req.body.quantity
+                        id: req.body.cartItem.id,
+                        quantity: req.body.cartItem.quantity
                     }
                 ]
             });
